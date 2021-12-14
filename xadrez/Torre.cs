@@ -1,6 +1,6 @@
-﻿using System;
+﻿
 using tabuleiro;
-using System.Globalization;
+
 
 namespace xadrez
 {
@@ -10,7 +10,7 @@ namespace xadrez
         {
         }
 
-        public bool podeMover(Posicao pos)
+        private bool podeMover(Posicao pos)
         {
             Peca p = tab.peca(pos);
             return p == null || p.cor != cor;
