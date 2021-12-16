@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 using tabuleiro;
 
 
@@ -9,6 +9,12 @@ namespace xadrez
         public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
         }
+
+        public override string ToString()
+        {
+            return " T ";
+        }
+
 
         private bool podeMover(Posicao pos)
         {
@@ -24,7 +30,8 @@ namespace xadrez
 
             //acima
             pos.definirValores(posicao.linha - 1, posicao.coluna);
-            while (tab.posicaoValida(pos) && podeMover(pos)) {
+            while (tab.posicaoValida(pos) && podeMover(pos))
+            {
                 mat[pos.linha, pos.coluna] = true;
 
                 if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
@@ -79,10 +86,6 @@ namespace xadrez
 
 
         }
-
-        public override string ToString()
-        {
-            return " T ";
-        }
     }
+        
 }
